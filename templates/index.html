@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Flower Recognition</title>
+    <style>
+      /* Basic styling */
+      body {
+        font-family: sans-serif;
+        text-align: center;
+      }
+      h1 {
+        margin-top: 50px;
+        margin-bottom: 30px;
+      }
+      input[type="submit"] {
+        margin-top: 20px;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      .result {
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flower Recognition</h1>
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="file"><br><br>
+      <input type="submit" value="Upload">
+    </form>
+    {% if flower %}
+      <div class="result">
+        <h2>Predicted flower: {{ flower }}</h2>
+        <p>Wikipedia link: <a href="{{ wikipedia_link }}">{{ wikipedia_link }}</a></p>
+      </div>
+    {% endif %}
+  </body>
+</html>
